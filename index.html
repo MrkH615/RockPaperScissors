@@ -10,6 +10,7 @@
     <script>
         
       let computerSelection;
+      let playerSelection;
       let randomInteger;
       let min;
       let max;
@@ -35,7 +36,7 @@
         }  //works
 
         function playerChoice() {
-            let playerSelection = prompt("Rock, paper, or scissors?");
+            playerSelection = prompt("Rock, paper, or scissors?");
             playerSelection = playerSelection.toLowerCase();
             console.log(playerSelection);           
             return playerSelection;
@@ -44,16 +45,8 @@
 
         
         
- /*         
-let playerSelection;
- // function to ask player for choice
-        function playerChoice() {
-            playerSelection = prompt("Rock, paper, or scissors?");
-            playerSelection = playerSelection.toLowerCase();
-            return playerSelection;
-        }
-        
-        playerChoice();
+      
+
         
         let playerWins;
         let computerWins;
@@ -61,6 +54,8 @@ let playerSelection;
 
         function playOneRound(playerSelection, computerSelection) {  // compares playerSelection, computerSelection declares winner
             
+            computerPlay();
+            playerChoice();
 
             playerWins = function(playerSelection, computerSelection) {
               result = `Computer loses!  ${playerSelection} beats ${computerSelection}`;
@@ -75,7 +70,7 @@ let playerSelection;
             };
 
 
-            /*function playerWins(playerSelection, computerSelection) {
+            function playerWins(playerSelection, computerSelection) {
                 result = `Computer loses!  ${playerSelection} beats ${computerSelection}`;
                 console.log(result);
                 return result;
@@ -85,7 +80,7 @@ let playerSelection;
                   result = `You lose! ${computerSelection} beats ${playerSelection}`;
                   console.log(result);
                   return result;
-            } */
+            } 
 
             /* function tie(playerSelection, computerSelection) {
               if (playerSelection == computerSelection) {
@@ -93,7 +88,7 @@ let playerSelection;
                 console.log(result);
                 return result;
               }  */
-/*
+
             if (playerSelection == computerSelection) {
               result = "Tie!";
             
@@ -121,7 +116,7 @@ let playerSelection;
            
 
         playOneRound(playerSelection, computerSelection);
-        console.log(result);
+        console.log(result); // always computerSelection = "scissors", returns tie even when playerSelection != computerSelection
           
          
 
