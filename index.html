@@ -40,7 +40,7 @@
             playerSelection = playerSelection.toLowerCase();
             console.log(playerSelection);           
             return playerSelection;
-        }
+        }  //works
 
 
         
@@ -52,12 +52,14 @@
         let computerWins;
         let result;
 
+        computerPlay(); //works  oustisde of playOneRound not inside - WHY?
+        playerChoice(); //works  oustisde of playOneRound not inside - WHY?
+        
+
         function playOneRound(playerSelection, computerSelection) {  // compares playerSelection, computerSelection declares winner
             
-            computerPlay();
-            playerChoice();
 
-            playerWins = function(playerSelection, computerSelection) {
+            /*playerWins = function(playerSelection, computerSelection) {
               result = `Computer loses!  ${playerSelection} beats ${computerSelection}`;
               console.log(result);
               return result;
@@ -67,7 +69,7 @@
               result = `You lose! ${computerSelection} beats ${playerSelection}`;
               console.log(result);
               return result;
-            };
+            }; */
 
 
             function playerWins(playerSelection, computerSelection) {
@@ -82,38 +84,53 @@
                   return result;
             } 
 
-            /* function tie(playerSelection, computerSelection) {
-              if (playerSelection == computerSelection) {
+            function tie(playerSelection, computerSelection) {
                 result = `It's a tie!`;
                 console.log(result);
                 return result;
-              }  */
+              }  
 
-            if (playerSelection == computerSelection) {
-              result = "Tie!";
+            if (playerSelection === computerSelection) { // if commented out, the if... else statements return undefined
+              // result = "Tie!";
+              result = tie(playerSelection, computerSelection);
+              console.log(result);
+              return result;
             
-            }  else if (playerSelection == "rock" && computerSelection == "paper") {
-              computerWins(playerSelection, computerSelection);
+            }  else if (playerSelection ==="rock" && computerSelection === "paper") {
+              result = computerWins(playerSelection, computerSelection);
+              console.log(result);
+              return result;
 
-            }  else if (playerSelection == "rock"  && computerSelection == "scissors") {
-                playerWins(playerSelection, computerSelection); 
+            }  else if (playerSelection === "rock"  && computerSelection === "scissors") {
+              result = playerWins(playerSelection, computerSelection); 
+              console.log(result);
+              return result;
 
-            } else if (playerSelection == "paper"  && computerSelection == "scissors") {
-                computerWins(playerSelection, computerSelection);
 
-            } else if (playerSelection == "paper" && computerSelection == "rock") {
-                playerWins(playerSelection, computerSelection);
+            } else if (playerSelection === "paper"  && computerSelection === "scissors") {
+              result = computerWins(playerSelection, computerSelection);
+              console.log(result);
+              return result;
 
-            } else if (playerSelection == "scissors" && computerSelection == "paper") {
-                playerWins(playerSelection, computerSelection); 
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
+              result = playerWins(playerSelection, computerSelection);
+              console.log(result);
+              return result;
 
-            }  else if (playerSelection == "scissors" && computerSelection == "rock") {
-              computerWins(playerSelection, computerSelection);
+            } else if (playerSelection === "scissors" && computerSelection === "paper") {
+              result = playerWins(playerSelection, computerSelection); 
+              console.log(result);
+              return result;
+
+            }  else if (playerSelection === "scissors" && computerSelection === "rock") {
+              result = computerWins(playerSelection, computerSelection);
+              console.log(result);
+              return result;
             }
 
         }
 
-           
+        
 
         playOneRound(playerSelection, computerSelection);
         console.log(result); // always computerSelection = "scissors", returns tie even when playerSelection != computerSelection
