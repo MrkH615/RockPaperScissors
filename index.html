@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Rock Paper Scissors - new_start</title>
+  <title> Rock Paper Scissors</title>
   <meta charset = "utf-8">
-  <!-- starting over on Rock Paper Scissors project from The Odin Project Web Development 101 course
+  <!--  Rock Paper Scissors project from The Odin Project Web Development 101 course
   https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors -->
 </head>  
 <body>
@@ -30,7 +30,7 @@
             } else {
                computerSelection = "scissors";
             }
-            console.log(computerSelection);
+            //console.log(computerSelection);
             return computerSelection;
             
         }  //works
@@ -38,14 +38,9 @@
         function playerChoice() {
             playerSelection = prompt("Rock, paper, or scissors?");
             playerSelection = playerSelection.toLowerCase();
-            console.log(playerSelection);           
+            //console.log(playerSelection);           
             return playerSelection;
         }  //works
-
-
-        
-        
-      
 
         
         let playerWins;
@@ -74,26 +69,26 @@
 
             function playerWins(playerSelection, computerSelection) {
                 result = `Computer loses!  ${playerSelection} beats ${computerSelection}`;
-                console.log(result);
+                //console.log(result);
                 return result;
             } 
             
             function computerWins(playerSelection, computerSelection) {
                   result = `You lose! ${computerSelection} beats ${playerSelection}`;
-                  console.log(result);
+                  ////console.log(result);
                   return result;
             } 
 
             function tie(playerSelection, computerSelection) {
                 result = `It's a tie!`;
-                console.log(result);
+                //console.log(result);
                 return result;
               }  
 
             if (playerSelection === computerSelection) { // if commented out, the if... else statements return undefined
               // result = "Tie!";
               result = tie(playerSelection, computerSelection);
-              console.log(result);
+              //console.log(result);
               return result;
             
             }  else if (playerSelection ==="rock" && computerSelection === "paper") {
@@ -103,28 +98,28 @@
 
             }  else if (playerSelection === "rock"  && computerSelection === "scissors") {
               result = playerWins(playerSelection, computerSelection); 
-              console.log(result);
+              //console.log(result);
               return result;
 
 
             } else if (playerSelection === "paper"  && computerSelection === "scissors") {
               result = computerWins(playerSelection, computerSelection);
-              console.log(result);
+              //console.log(result);
               return result;
 
             } else if (playerSelection === "paper" && computerSelection === "rock") {
               result = playerWins(playerSelection, computerSelection);
-              console.log(result);
+              //console.log(result);
               return result;
 
             } else if (playerSelection === "scissors" && computerSelection === "paper") {
               result = playerWins(playerSelection, computerSelection); 
-              console.log(result);
+              //console.log(result);
               return result;
 
             }  else if (playerSelection === "scissors" && computerSelection === "rock") {
               result = computerWins(playerSelection, computerSelection);
-              console.log(result);
+              //console.log(result);
               return result;
             }
 
