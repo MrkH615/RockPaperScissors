@@ -127,9 +127,27 @@ function game() {
   
   for (let gameCounter = 1; gameCounter < 6; gameCounter++) { 
         playOneRound(playerSelection, computerSelection);
-        console.log(result);
-        //console.log(gameCounter);
+        console.log(result); 
+        if (result == playerWins) {
+          playerPoints++;
+          console.log(playerPoints);
+        }  else if (result == computerWins) {
+          computerPoints++;
+          console.log(computerPoints);
         }
+        console.log(gameCounter);
+        }
+
+        console.log(`total player points:  ${playerPoints}`);
+        console.log(`total computer points:  ${computerPoints}`);
+        if (playerPoints > computerPoints) {
+          console.log("You win!");
+        } else if (computerPoints > playerPoints) {
+          console.log ("You loose!");
+        } else {
+          console.log ("It's a tie!");
+        }
+
 }  
           
 game();
