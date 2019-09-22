@@ -37,7 +37,12 @@
 
         function playerChoice() {
             playerSelection = prompt("Rock, paper, or scissors?"); 
-            playerSelection = playerSelection.toLowerCase();       
+            playerSelection = playerSelection.toLowerCase();   
+           while (playerSelection !=  "rock" && playerSelection !="paper" && playerSelection != "scissors") {
+              console.log("Invalid choice!  Please choose rock, paper, or scissors.");
+              playerSelection = prompt("Rock, paper, or scissors?"); 
+              playerSelection = playerSelection.toLowerCase();
+            }
             return playerSelection;
         }  
 
@@ -99,7 +104,9 @@
             }  else if (playerSelection === "scissors" && computerSelection === "rock") {
               result = computerWins(playerSelection, computerSelection);
               return result;
-            }
+            } /*else {
+              console.log("Invalid choice!  Please choose rock, paper, or scissors.");
+            }*/
 
         }
 
@@ -113,7 +120,7 @@ function game() {
 
         console.log(`total player points:  ${playerPoints}`);
         console.log(`total computer points:  ${computerPoints}`);
-        
+
         if (playerPoints > computerPoints) {
           console.log("You win!");
         } else if (computerPoints > playerPoints) {
