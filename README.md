@@ -6,3 +6,4 @@ This was my first project with Java Script, completed as part of The Odin Projec
 - Try out short snippets of code before incorporating them into a project.
 - The cause of and solution to a problem aren't always what I think they are at first.
 - Be prepared to try out different ideas and throw them out if necessary.
+- Git branching (the very basics)!
