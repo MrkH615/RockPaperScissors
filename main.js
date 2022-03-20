@@ -1,20 +1,22 @@
 let computerSelection;
-      let playerSelection;
-      let randomInteger;
-      let min;
-      let max;
+let playerSelection;
+/*let randomInteger;*/
+/*let min;
+let max;*/
 
 // computer selects rock, paper, scissors)
         function computerPlay() {  
-            function randomInteger(min, max) {  
-                min = Math.ceil(1);
-                max = Math.floor(3);
+          /*let min;
+          let max;*/
+          function randomInteger() {  
+                let min = Math.ceil(1);
+                let max = Math.floor(3);
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
 
-            if (randomInteger(min, max) === 1) {
+            if (randomInteger() === 1) {
               computerSelection = "rock";
-            } else if (randomInteger(min, max) === 2) {
+            } else if (randomInteger() === 2) {
                 computerSelection = "paper";
             } else {
                computerSelection = "scissors";
@@ -25,8 +27,8 @@ let computerSelection;
         } 
 
         function playerChoice() {
-            playerSelection = prompt("Rock, paper, or scissors?"); 
-            playerSelection = playerSelection.toLowerCase();   
+          playerSelection = prompt("Rock, paper, or scissors?"); 
+          playerSelection = playerSelection.toLowerCase();   
            while (playerSelection !=  "rock" && playerSelection !="paper" && playerSelection != "scissors") {
               console.log("Invalid choice!  Please choose rock, paper, or scissors.");
               playerSelection = prompt("Rock, paper, or scissors?"); 
@@ -99,6 +101,7 @@ let computerSelection;
 
         
 function game() {
+  /*let playerSelection;*/
   
   for (let gameCounter = 1; gameCounter < 6; gameCounter++) { 
         playOneRound(playerSelection, computerSelection);
