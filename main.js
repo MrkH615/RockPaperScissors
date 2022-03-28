@@ -6,12 +6,11 @@ let max;*/
 
 // computer selects rock, paper, scissors)
         function computerPlay() {  
-          /*let min;
-          let max;*/
+         
           function randomInteger() {  
                 let min = Math.ceil(1);
                 let max = Math.floor(3);
-                return Math.floor(Math.random() * (max - min + 1)) + min;
+                return Math.floor(Math.random() * (max - min + 1)) + min; 
             }
 
             if (randomInteger() === 1) {
@@ -98,10 +97,8 @@ let max;*/
             } 
 
         }
-
         
 function game() {
-  /*let playerSelection;*/
   
   for (let gameCounter = 1; gameCounter < 6; gameCounter++) { 
         playOneRound(playerSelection, computerSelection);
@@ -118,7 +115,6 @@ function game() {
         } else {
           console.log ("It's a tie!");
         }
-
 }  
           
 game();
