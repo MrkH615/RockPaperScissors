@@ -1,8 +1,6 @@
 let computerSelection;
 let playerSelection;
-/*let randomInteger;*/
-/*let min;
-let max;*/
+
 
 // computer selects rock, paper, scissors)
         function computerPlay() {  
