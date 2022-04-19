@@ -1,30 +1,37 @@
-let computerSelection;
-let playerSelection;
+//let computerSelection;
+//let playerSelection;
 
 
 // computer selects rock, paper, scissors)
         function computerPlay() {  
-         
+          //let computerSelection;
           function randomInteger() {  
                 let min = Math.ceil(1);
                 let max = Math.floor(3);
+                console.log('inside randomInteger()');
                 return Math.floor(Math.random() * (max - min + 1)) + min; 
             }
 
-            if (randomInteger() === 1) {
-              computerSelection = "rock";
-            } else if (randomInteger() === 2) {
-                computerSelection = "paper";
-            } else {
-               computerSelection = "scissors";
+            if (randomInteger() === 1) { //having () seems to make no difference
+              //computerSelection = "rock";
+              return 'rock';
             }
-            
-            return computerSelection;
+           if (randomInteger() === 2) {
+                //computerSelection = "paper";
+                return 'paper';
+           }
+
+           if (randomInteger() === 3) {
+               //computerSelection = "scissors";
+               return 'scissors';
+            }
+            //console.log('inside computerPlay()'); //gets displayed
+            //return computerSelection;
             
         } 
 
         function playerChoice() {
-          playerSelection = prompt("Rock, paper, or scissors?"); 
+          let playerSelection = prompt("Rock, paper, or scissors?"); 
           playerSelection = playerSelection.toLowerCase();   
            while (playerSelection !=  "rock" && playerSelection !="paper" && playerSelection != "scissors") {
               console.log("Invalid choice!  Please choose rock, paper, or scissors.");
@@ -35,17 +42,21 @@ let playerSelection;
         }  
 
         
-        let playerWins;
-        let computerWins;
-        let result;
+        //let playerWins;
+        //let computerWins;
+        //let result;
         let playerPoints = 0;
         let computerPoints = 0;
 
 // compares playerSelection, computerSelection declares winner
-        function playOneRound(playerSelection, computerSelection) {  
-            
-            computerPlay();
-            playerChoice();
+        //function playOneRound(playerSelection, computerSelection) {  
+          function playOneRound() {
+
+            console.log('inside playOneRound()');
+            let result;
+
+            let computerSelection = computerPlay();
+            let playerSelection = playerChoice();
 
             function playerWins(playerSelection, computerSelection) {
                 result = `Computer loses!  ${playerSelection} beats ${computerSelection}`;
@@ -95,24 +106,32 @@ let playerSelection;
             } 
 
         }
-        
-function game() {
-  
-  for (let gameCounter = 1; gameCounter < 6; gameCounter++) { 
+  /*      
+function game() {  //only declares winner every other time??
+  //a. For now, remove the logic that plays exactly five rounds.
+
+  /*for (let gameCounter = 1; gameCounter < 6; gameCounter++) { 
         playOneRound(playerSelection, computerSelection);
         console.log(result); 
         }
+        */
 
-        console.log(`total player points:  ${playerPoints}`);
-        console.log(`total computer points:  ${computerPoints}`);
+       //playOneRound(playerChoice(), computerPlay()); 
+       //playOneRound(playerSelection, computerSelection); //always a tie !?
+      // playOneRound(playerChoice(), computerPlay());//doesn't always display winner
+       //invalid choice??
 
-        if (playerPoints > computerPoints) {
+       // console.log(`total player points:  ${playerPoints}`);
+        //console.log(`total computer points:  ${computerPoints}`);
+
+        /*if (playerPoints > computerPoints) {
           console.log("You win!");
         } else if (computerPoints > playerPoints) {
           console.log ("You lose!");
         } else {
           console.log ("It's a tie!");
         }
-}  
+} 
           
-game();
+game();*/
+console.log(playOneRound());
