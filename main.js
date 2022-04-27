@@ -1,6 +1,6 @@
 function getPlayerChoice() {
   let playerChoice;
-  let computerChoice;
+  let computerChoice //= getComputerChoice(); assigned here, then plays only 1 round
 
   const rock = document.querySelector('#rock');
   const paper = document.querySelector('#paper');
@@ -13,11 +13,17 @@ function getPlayerChoice() {
     console.log(compare(playerChoice, computerChoice));
   });
   
-  /*paper.addEventListener('click', () => {
+  paper.addEventListener('click', () => {
     playerChoice = 'paper';
-
+    computerChoice = getComputerChoice();
+    console.log(compare(playerChoice, computerChoice));
   });
-  //scissors.addEventListener('click', ()=> choice =  'scissors');
+  
+  scissors.addEventListener('click', () => {
+    playerChoice =  'scissors';
+    computerChoice = getComputerChoice();
+    console.log(compare(playerChoice, computerChoice));
+  });
 //console.log(playerChoice);
 //if (playerChoice.choice!==null) return playerChoice;
 
