@@ -1,6 +1,12 @@
 function getPlayerChoice() {
   let playerChoice;
   let computerChoice //= getComputerChoice(); assigned here, then plays only 1 round
+  let comparison;
+  let points = [0,0];
+  let [playerPoints, computerPoints] = points;
+  //playerPoints = 0;
+  //computerPoints = 0;
+  let score;
 
   const rock = document.querySelector('#rock');
   const paper = document.querySelector('#paper');
@@ -9,8 +15,12 @@ function getPlayerChoice() {
   rock.addEventListener('click', () => {
     playerChoice = 'rock';
     computerChoice = getComputerChoice();
+    comparison = compare(playerChoice, computerChoice);
+    score = incrementPoints(comparison, points);
+    console.log(computerChoice, comparison, score);
+
     //console.log(playerChoice, computerChoice);
-    console.log(compare(playerChoice, computerChoice));
+    //console.log(compare(playerChoice, computerChoice));
   });
   
   paper.addEventListener('click', () => {
@@ -24,8 +34,6 @@ function getPlayerChoice() {
     computerChoice = getComputerChoice();
     console.log(compare(playerChoice, computerChoice));
   });
-//console.log(playerChoice);
-//if (playerChoice.choice!==null) return playerChoice;
 
 }
 
@@ -55,6 +63,7 @@ function getRandomInteger(min,max) {
 }
 
 function compare(playerChoice, computerChoice) {
+
   if (playerChoice === computerChoice) {
     return "It's a tie!";
   }
@@ -83,7 +92,19 @@ function compare(playerChoice, computerChoice) {
     return "You win";
   }
 
+}
+
+
+function incrementPoints(comparison, points) {
   
+  switch (comparison) {
+    case 'You win':
+      return [playerPoints++, computerPoints];
+    case 'Computer wins':
+      return [playerPoints, computerPoints++];
+    default:
+      return [playerPoints++, computerPoints++];  
+  }
 
 }
 
