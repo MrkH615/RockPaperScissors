@@ -1,12 +1,17 @@
+function startGame() {
+  return points = [0,0];
+}
+
 function getPlayerChoice() {
   let playerChoice;
   let computerChoice //= getComputerChoice(); assigned here, then plays only 1 round
   let comparison;
-  let points = [0,0];
-  let [playerPoints, computerPoints] = points;
+  let points //= [0,0]; //always resets to zero?
+  console.log('points', points);
+  //const [playerPoints, computerPoints] = points;
   //playerPoints = 0;
   //computerPoints = 0;
-  let score;
+  //let score;
 
   const rock = document.querySelector('#rock');
   const paper = document.querySelector('#paper');
@@ -14,10 +19,13 @@ function getPlayerChoice() {
 
   rock.addEventListener('click', () => {
     playerChoice = 'rock';
-    computerChoice = getComputerChoice();
+    computerChoice = getComputerChoice(); //winner is undefined without ()
     comparison = compare(playerChoice, computerChoice);
-    score = incrementPoints(comparison, points);
-    console.log(computerChoice, comparison, score);
+    //score = incrementPoints(comparison, points);
+    points === undefined ? points = [0,0] : points = incrementPoints(comparison, points); //undefine
+    //console.log(computerChoice, comparison, score);
+    console.log(computerChoice, comparison, points);
+
 
     //console.log(playerChoice, computerChoice);
     //console.log(compare(playerChoice, computerChoice));
@@ -96,17 +104,24 @@ function compare(playerChoice, computerChoice) {
 
 
 function incrementPoints(comparison, points) {
-  
+  let [playerPoints, computerPoints] = points;
+
   switch (comparison) {
     case 'You win':
-      return [playerPoints++, computerPoints];
+      return [++playerPoints, computerPoints];
     case 'Computer wins':
-      return [playerPoints, computerPoints++];
+      return [playerPoints, ++computerPoints];
     default:
-      return [playerPoints++, computerPoints++];  
+      return [++playerPoints, ++computerPoints];  
   }
 
 }
 
+function playRound() {
+    computerChoice = getComputerChoice(); //winner is undefined without ()
+    comparison = compare(playerChoice, computerChoice);
+    score = incrementPoints(comparison, points);
+}
+
 //playGame();
-getPlayerChoice();
+getPlayerChoice();//computerChoice, Winner, [playerPoints, computerPoints]
