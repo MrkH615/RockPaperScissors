@@ -1,17 +1,9 @@
-function startGame() {
-  return points = [0,0];
-}
-
 function getPlayerChoice() {
   let playerChoice;
-  let computerChoice //= getComputerChoice(); assigned here, then plays only 1 round
+  let computerChoice 
   let comparison;
-  let points //= [0,0]; //always resets to zero?
-  console.log('points', points);
-  //const [playerPoints, computerPoints] = points;
-  //playerPoints = 0;
-  //computerPoints = 0;
-  //let score;
+  let points;
+  
 
   const rock = document.querySelector('#rock');
   const paper = document.querySelector('#paper');
@@ -19,12 +11,14 @@ function getPlayerChoice() {
 
   rock.addEventListener('click', () => {
     playerChoice = 'rock';
-    computerChoice = getComputerChoice(); //winner is undefined without ()
-    comparison = compare(playerChoice, computerChoice);
-    //score = incrementPoints(comparison, points);
-    points === undefined ? points = [0,0] : points = incrementPoints(comparison, points); //undefine
+    //computerChoice = getComputerChoice(); 
+    //comparison = compare(playerChoice, computerChoice);
+    //playRound(playerChoice, points);
+    //points === undefined ? points = [0,0] : points = incrementPoints(comparison, points); //undefine
+    points=playRound(playerChoice, points);
+    console.log(points);
     //console.log(computerChoice, comparison, score);
-    console.log(computerChoice, comparison, points);
+    //console.log(playerChoice,computerChoice, comparison, points); //points from before update -- how to get after?
 
 
     //console.log(playerChoice, computerChoice);
@@ -117,10 +111,16 @@ function incrementPoints(comparison, points) {
 
 }
 
-function playRound() {
-    computerChoice = getComputerChoice(); //winner is undefined without ()
+//function playRound(computerChoice, playerChoice, comparison, score);
+function playRound(playerChoice, points) {
+    computerChoice = getComputerChoice(); 
     comparison = compare(playerChoice, computerChoice);
-    score = incrementPoints(comparison, points);
+    console.log(`You choose ${playerChoice}. Computer chooses ${computerChoice}.`);
+    console.log(comparison);
+    points === undefined ? points = [0,0] : points = incrementPoints(comparison, points);
+    //score = incrementPoints(comparison, points);
+    //return score;
+    return points;
 }
 
 //playGame();
