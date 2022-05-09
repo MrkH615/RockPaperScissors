@@ -24,17 +24,26 @@ function getPlayerChoice() {
     //console.log(playerChoice, computerChoice);
     //console.log(compare(playerChoice, computerChoice));
   });
+
+  /* TODO: 
+  1. call playRound() in other event listener functions
+  2. display score and choices in DOM
+  */
   
   paper.addEventListener('click', () => {
     playerChoice = 'paper';
-    computerChoice = getComputerChoice();
-    console.log(compare(playerChoice, computerChoice));
+    //computerChoice = getComputerChoice();
+   // console.log(compare(playerChoice, computerChoice));
+   points = playRound(playerChoice, points);
+   console.log(points);
   });
   
   scissors.addEventListener('click', () => {
     playerChoice =  'scissors';
-    computerChoice = getComputerChoice();
-    console.log(compare(playerChoice, computerChoice));
+    //computerChoice = getComputerChoice();
+    //console.log(compare(playerChoice, computerChoice));
+    points = playRound(playerChoice, points);
+   console.log(points);
   });
 
 }
