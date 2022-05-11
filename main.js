@@ -26,8 +26,9 @@ function getPlayerChoice() {
   });
 
   /* TODO: 
-  1. call playRound() in other event listener functions
-  2. display score and choices in DOM
+  
+  1. display score and choices in DOM 
+  2. update points before dispalying
   */
   
   paper.addEventListener('click', () => {

@@ -1,0 +1,22 @@
+#game-wrapper {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#title-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#scoreboard {
+    width: 100%;
+    display: flex;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+}
+
