@@ -1,8 +1,11 @@
 function getPlayerChoice() {
   let playerChoice;
-  let computerChoice 
+  let computerChoice;
   let comparison;
   let points;
+
+  const computerScore = document.querySelector('#computer-score');
+  const humanScore = document.querySelector('#human-score');
   
 
   const rock = document.querySelector('#rock');
@@ -16,6 +19,8 @@ function getPlayerChoice() {
     //playRound(playerChoice, points);
     //points === undefined ? points = [0,0] : points = incrementPoints(comparison, points); //undefine
     points=playRound(playerChoice, points);
+    humanScore.textContent =  points[0];
+    computerScore.textContent = points[1];
     console.log(points);
     //console.log(computerChoice, comparison, score);
     //console.log(playerChoice,computerChoice, comparison, points); //points from before update -- how to get after?
@@ -36,6 +41,8 @@ function getPlayerChoice() {
     //computerChoice = getComputerChoice();
    // console.log(compare(playerChoice, computerChoice));
    points = playRound(playerChoice, points);
+   humanScore.textContent =  points[0];
+    computerScore.textContent = points[1];
    console.log(points);
   });
   
@@ -44,16 +51,13 @@ function getPlayerChoice() {
     //computerChoice = getComputerChoice();
     //console.log(compare(playerChoice, computerChoice));
     points = playRound(playerChoice, points);
+    humanScore.textContent =  points[0];
+    computerScore.textContent = points[1];
    console.log(points);
   });
 
 }
 
-function playGame() {
- 
- let msg=getPlayerChoice();
- console.log(msg);
-}
 
 function getComputerChoice() {
   const MIN = 1;
@@ -135,3 +139,11 @@ function playRound(playerChoice, points) {
 
 //playGame();
 getPlayerChoice();//computerChoice, Winner, [playerPoints, computerPoints]
+
+//not called
+function playGame() {
+ 
+  let msg=getPlayerChoice();
+  console.log(msg);
+ }
+ 
