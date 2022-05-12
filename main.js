@@ -6,6 +6,7 @@ function getPlayerChoice() {
 
   const computerScore = document.querySelector('#computer-score');
   const humanScore = document.querySelector('#human-score');
+  const message = document.querySelector('#message');
   
 
   const rock = document.querySelector('#rock');
@@ -131,6 +132,8 @@ function playRound(playerChoice, points) {
     comparison = compare(playerChoice, computerChoice);
     console.log(`You choose ${playerChoice}. Computer chooses ${computerChoice}.`);
     console.log(comparison);
+    message.textContent = `You choose ${playerChoice}. Computer chooses ${computerChoice}.`
+    message.textContent += comparison;
     points === undefined ? points = [0,0] : points = incrementPoints(comparison, points);
     //score = incrementPoints(comparison, points);
     //return score;
