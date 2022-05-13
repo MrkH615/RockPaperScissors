@@ -1,4 +1,4 @@
-function getPlayerChoice() {
+function playGame() {
   let playerChoice;
   let computerChoice;
   let comparison;
@@ -23,6 +23,7 @@ function getPlayerChoice() {
     humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
     console.log(points);
+    if (points[0] > 5 || points[1] > 5) endGame();
     //console.log(computerChoice, comparison, score);
     //console.log(playerChoice,computerChoice, comparison, points); //points from before update -- how to get after?
 
@@ -33,7 +34,7 @@ function getPlayerChoice() {
 
   /* TODO: 
   
-  1. display score and choices in DOM 
+  1. play until 5 points
   2. update points before dispalying
   */
   
@@ -45,6 +46,7 @@ function getPlayerChoice() {
    humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
    console.log(points);
+   if (points[0] > 5 || points[1] > 5) endGame();
   });
   
   scissors.addEventListener('click', () => {
@@ -55,7 +57,11 @@ function getPlayerChoice() {
     humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
    console.log(points);
+   if (points[0] > 5  || points[1] > 5) endGame();
   });
+
+
+endGame();
 
 }
 
@@ -140,13 +146,25 @@ function playRound(playerChoice, points) {
     return points;
 }
 
-//playGame();
-getPlayerChoice();//computerChoice, Winner, [playerPoints, computerPoints]
+function updateScore() {
+  points=playRound(playerChoice, points);
+  humanScore.textContent =  points[0];
+  computerScore.textContent = points[1];
+  console.log(points);
+  if (points[0] > 5 || points[1] > 5) endGame();
+}
+
+function endGame() {
+  message.textContent='Game over';
+}
+
+playGame();
+//getPlayerChoice();//computerChoice, Winner, [playerPoints, computerPoints]
 
 //not called
-function playGame() {
+/*function playGame() {
  
   let msg=getPlayerChoice();
   console.log(msg);
- }
+ }*/
  
