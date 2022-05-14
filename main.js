@@ -73,9 +73,7 @@ function playGame() {
    if (points[0] >= 5  || points[1] >= 5) endGame();
    
   });
-
 }
-
 
 function getComputerChoice() {
   const MIN = 1;
@@ -175,12 +173,3 @@ function endGame() {
 }
 
 playGame();
-//getPlayerChoice();//computerChoice, Winner, [playerPoints, computerPoints]
-
-//not called
-/*function playGame() {
- 
-  let msg=getPlayerChoice();
-  console.log(msg);
- }*/
- 
