@@ -6,6 +6,15 @@ h2 {
     font-size: 1rem;
 }
 
+p {
+    font-size: 0.8rem;
+}
+
+button {
+    border-radius: 50%;
+    display: inline-block;
+}
+
 * {
     margin: .2rem;
 }
@@ -27,15 +36,23 @@ h2 {
     /*width: 50%;*/
     display: flex;
     align-self: center;
-    
+    height: 3.5rem;
+    background-color: black;
+    color: red;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #playerScore, #computerScore {
-    border: solid black 2px;
+    border: solid goldenrod 2px;
+    /*padding: 2rem;*/
+}
+
+#playerScore {
+    padding: 0 1.8rem;
 }
 
 #buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
