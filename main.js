@@ -3,7 +3,7 @@ function playGame() {
   let playerChoice;
   let computerChoice;
   let comparison;
-  let points;
+  let points = [0,0];
 
   const computerScore = document.querySelector('#computer-score');
   const humanScore = document.querySelector('#human-score');
@@ -16,7 +16,7 @@ function playGame() {
   const scissors = document.querySelector('#scissors');
 
 
-  rock.addEventListener('click', () => {
+  rock.addEventListener('click', chooseRock = () => {
     playerChoice = 'rock';
     //computerChoice = getComputerChoice(); 
     //comparison = compare(playerChoice, computerChoice);
@@ -47,7 +47,7 @@ function playGame() {
   2. update points before dispalying
   */
   
-  paper.addEventListener('click', () => {
+  paper.addEventListener('click', choosePaper = () => {
     playerChoice = 'paper';
     //updateScore(playerChoice, points);
     //computerChoice = getComputerChoice();
@@ -61,7 +61,7 @@ function playGame() {
    
   });
   
-  scissors.addEventListener('click', () => {
+  scissors.addEventListener('click', chooseScissors = () => {
     playerChoice =  'scissors';
     //computerChoice = getComputerChoice();
     //console.log(compare(playerChoice, computerChoice));
@@ -97,7 +97,7 @@ function getRandomInteger(min,max) {
 function compare(playerChoice, computerChoice) {
 
   if (playerChoice === computerChoice) {
-    return "It's a tie!";
+    return "It's a tie! ";
   }
 
   if (playerChoice === 'rock' && computerChoice === 'scissors') {
@@ -150,7 +150,8 @@ function playRound(playerChoice, points) {
     message.textContent = `You choose ${playerChoice}. Computer chooses ${computerChoice}.`
     message.textContent += comparison;
     //put the ternary for points in playGame();
-    points === undefined ? points = [0,0] : points = incrementPoints(comparison, points);
+    //points === undefined ? points = [0,0] : points = incrementPoints(comparison, points);
+    points = incrementPoints(comparison, points);
     //score = incrementPoints(comparison, points);
     //return score;
     //updateScore(playerChoice, points); TOO MUCH RECURSION error
@@ -170,6 +171,10 @@ function updateScore(playerChoice, points) {
 
 function endGame() {
   message.textContent='Game over';
+  //removeEventListener doesn't work
+  rock.removeEventListener('click', chooseRock);
+  paper.removeEventListener('click', choosePaper);
+  scissors.removeEventListener('click', chooseScissors);
 }
 
 playGame();
