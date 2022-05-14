@@ -30,7 +30,7 @@ function playGame() {
     humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
     console.log(points);
-    if (points[0] >= 5 || points[1] >= 5) endGame();
+    if (points[0] >= 5 || points[1] >= 5) endGame(points);
     
 
     //console.log(computerChoice, comparison, score);
@@ -57,7 +57,7 @@ function playGame() {
    humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
    console.log(points);
-   if (points[0] >= 5 || points[1] >= 5) endGame(); //displayed at start!?
+   if (points[0] >= 5 || points[1] >= 5) endGame(points); //displayed at start!?
    
   });
   
@@ -70,7 +70,7 @@ function playGame() {
     humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
    console.log(points);
-   if (points[0] >= 5  || points[1] >= 5) endGame();
+   if (points[0] >= 5  || points[1] >= 5) endGame(points);
    
   });
 }
@@ -166,12 +166,13 @@ function updateScore(playerChoice, points) {
   humanScore.textContent =  points[0];
   computerScore.textContent = points[1];
   console.log(points);
-  if (points[0] === 5 || points[1] === 5) endGame(); //same result as>5, goes up to 6pts
+  if (points[0] === 5 || points[1] === 5) endGame(points); //same result as>5, goes up to 6pts
 }
 
-function endGame() {
-  message.textContent='Game over';
-  //removeEventListener doesn't work
+function endGame(points) {
+  message.textContent='Game over! ';
+  points[0] > points [1] ? 
+    message.textContent += 'You win! ' : message.textContent += 'Computer wins! ';
   rock.removeEventListener('click', chooseRock);
   paper.removeEventListener('click', choosePaper);
   scissors.removeEventListener('click', chooseScissors);
