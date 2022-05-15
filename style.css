@@ -1,5 +1,6 @@
 h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    color: silver;
 }
 
 h2 {
@@ -10,9 +11,15 @@ p {
     font-size: 0.8rem;
 }
 
+h2, p {
+    font-family: 'Press Start 2P', cursive;
+}
+
 button {
     border-radius: 50%;
     display: inline-block;
+    width: 5rem;
+    height: 5rem;
 }
 
 * {
@@ -26,29 +33,62 @@ button {
     align-items: center;
 }
 
+#center-wrapper {
+    min-width: 60vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color:  #4f301f;
+}
+
 #title-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
+.rock {
+    font-family: 'Varela Round', sans-serif;
+}
+
+.paper {
+    font-family: 'Allura', cursive;
+}
+
+.scissors {
+    font-family: 'Shadows Into Light', cursive;
+}
+
 #scoreboard {
     /*width: 50%;*/
     display: flex;
     align-self: center;
-    height: 3.5rem;
-    background-color: black;
+    height: 5.5rem;
     color: red;
-    font-family: 'Press Start 2P', cursive;
 }
 
-#playerScore, #computerScore {
+#playerScore, #computerScore, #message {
     border: solid goldenrod 2px;
-    /*padding: 2rem;*/
 }
 
 #playerScore {
     padding: 0 1.8rem;
+}
+
+#computerScore {
+    padding: 0 0.3rem;
+}
+
+#scoreboard, #message {
+    background-color: black;
+}
+
+#message {
+    color: #66ff66;
+    width: 14.5rem;
+    height: 6rem;
+    padding: 0.2rem 1rem;
 }
 
 #buttons {
