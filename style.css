@@ -56,6 +56,10 @@ button {
     font-family: 'Allura', cursive;
 }
 
+button.paper {
+    font-size: 1.3rem;
+}
+
 .scissors {
     font-family: 'Shadows Into Light', cursive;
 }

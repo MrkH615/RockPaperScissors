@@ -18,60 +18,28 @@ function playGame() {
 
   rock.addEventListener('click', chooseRock = () => {
     playerChoice = 'rock';
-    //computerChoice = getComputerChoice(); 
-    //comparison = compare(playerChoice, computerChoice);
-    //playRound(playerChoice, points);
-    //points === undefined ? points = [0,0] : points = incrementPoints(comparison, points); //undefine
-    
-    //updateScore(playerChoice, points); //humanScore is not defined, points not displayed
-    //points not updated, h2 disappears from R side of scoreboard
-    
     points=playRound(playerChoice, points);
     humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
     console.log(points);
     if (points[0] >= 5 || points[1] >= 5) endGame(points);
-    
-
-    //console.log(computerChoice, comparison, score);
-    //console.log(playerChoice,computerChoice, comparison, points); //points from before update -- how to get after?
-
-
-    //console.log(playerChoice, computerChoice);
-    //console.log(compare(playerChoice, computerChoice));
   });
-
-  /* TODO: 
-  
-  1. play until 5 points
-  2. update points before dispalying
-  */
   
   paper.addEventListener('click', choosePaper = () => {
     playerChoice = 'paper';
-    //updateScore(playerChoice, points);
-    //computerChoice = getComputerChoice();
-   // console.log(compare(playerChoice, computerChoice));
-   
-   points = playRound(playerChoice, points);
-   humanScore.textContent =  points[0];
+    points = playRound(playerChoice, points);
+    humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
-   console.log(points);
-   if (points[0] >= 5 || points[1] >= 5) endGame(points); //displayed at start!?
-   
+    if (points[0] >= 5 || points[1] >= 5) endGame(points); 
   });
   
   scissors.addEventListener('click', chooseScissors = () => {
     playerChoice =  'scissors';
-    //computerChoice = getComputerChoice();
-    //console.log(compare(playerChoice, computerChoice));
-    //updateScore(playerChoice, points);
     points = playRound(playerChoice, points);
     humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
    console.log(points);
    if (points[0] >= 5  || points[1] >= 5) endGame(points);
-   
   });
 }
 
@@ -141,28 +109,17 @@ function incrementPoints(comparison, points) {
 
 }
 
-//function playRound(computerChoice, playerChoice, comparison, score);
 function playRound(playerChoice, points) {
     computerChoice = getComputerChoice(); 
     comparison = compare(playerChoice, computerChoice);
-    console.log(`You choose ${playerChoice}. Computer chooses ${computerChoice}.`);
-    console.log(comparison);
-    message.textContent = `You choose ${playerChoice}. Computer chooses ${computerChoice}.`
+    message.textContent = `You choose ${playerChoice}. Computer chooses ${computerChoice}. \n`;
     message.textContent += comparison;
-    //put the ternary for points in playGame();
-    //points === undefined ? points = [0,0] : points = incrementPoints(comparison, points);
     points = incrementPoints(comparison, points);
-    //score = incrementPoints(comparison, points);
-    //return score;
-    //updateScore(playerChoice, points); TOO MUCH RECURSION error
     return points;
 }
 
 function updateScore(playerChoice, points) {
-  //const computerScore = document.querySelector('#computer-score');
-  //const humanScore = document.querySelector('#human-score');
-  points=playRound(playerChoice, points);//leave in eventListener callback?
-  //if (points[0] === 5 || points[1] === 5) endGame();
+  points=playRound(playerChoice, points);
   humanScore.textContent =  points[0];
   computerScore.textContent = points[1];
   console.log(points);
