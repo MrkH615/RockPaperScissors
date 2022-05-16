@@ -52,6 +52,16 @@ button {
     font-family: 'Varela Round', sans-serif;
 }
 
+span.rock {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: url(images/pexels-pille-kirsi-1093207.jpg)
+}
+
+button.rock {
+    background: url(images/pexels-pille-kirsi-1093207.jpg);
+}
+
 .paper {
     font-family: 'Allura', cursive;
 }
