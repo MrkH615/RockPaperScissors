@@ -10,3 +10,4 @@ This was my first project with Java Script, completed as part of The Odin Projec
 
 Photo credits
 - rock from https://www.pexels.com/photo/macro-photo-of-a-rock-1093207/ by Pille Kirsi
+- paper from https://www.pexels.com/photo/low-angle-view-of-spiral-staircase-315791/

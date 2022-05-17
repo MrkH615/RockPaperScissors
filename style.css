@@ -1,3 +1,9 @@
+/*
+* {
+    margin: .2rem;
+}
+*/
+
 h1 {
     font-size: 2.5rem;
     color: silver;
@@ -22,10 +28,6 @@ button {
     height: 5rem;
 }
 
-* {
-    margin: .2rem;
-}
-
 #game-wrapper {
     width: 100vw;
     display: flex;
@@ -34,12 +36,14 @@ button {
 }
 
 #center-wrapper {
+    margin-top: 0px;
     min-width: 60vw;
     height: 100vh;
     display: flex;
     flex-direction: column; 
     align-items: center;
-    background-color:  #4f301f;
+    /*background-color:  #4f301f;*/
+    background: linear-gradient(to bottom right, maroon, navy);
 }
 
 #title-wrapper {
@@ -55,7 +59,7 @@ button {
 span.rock {
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: url(images/pexels-pille-kirsi-1093207.jpg)
+    background-image: url(images/pexels-pille-kirsi-1093207.jpg);
 }
 
 button.rock {
@@ -68,6 +72,13 @@ button.rock {
 
 button.paper {
     font-size: 1.3rem;
+    background: url(images/pexels-pixabay-315791.jpg);
+}
+
+span.paper {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: url(images/pexels-pixabay-315791.jpg);
 }
 
 .scissors {
@@ -76,6 +87,7 @@ button.paper {
 
 #scoreboard {
     /*width: 50%;*/
+    margin-top: 1rem;
     display: flex;
     align-self: center;
     height: 5.5rem;
@@ -96,6 +108,7 @@ button.paper {
 
 #scoreboard, #message {
     background-color: black;
+    margin: 1rem 0;
 }
 
 #message {
@@ -108,5 +121,7 @@ button.paper {
 #buttons {
     display: flex;
     justify-content: space-around;
+    width: 19rem;
+    margin: 1rem 0;
 }
 
