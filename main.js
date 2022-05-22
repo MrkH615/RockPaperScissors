@@ -18,28 +18,37 @@ function playGame() {
 
   rock.addEventListener('click', chooseRock = () => {
     playerChoice = 'rock';
+    points=updateScore(playerChoice, points, humanScore, computerScore);
+/*
     points=playRound(playerChoice, points);
     humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
     console.log(points);
     if (points[0] >= 5 || points[1] >= 5) endGame(points);
+*/
   });
   
   paper.addEventListener('click', choosePaper = () => {
     playerChoice = 'paper';
+    points=updateScore(playerChoice, points, humanScore, computerScore);
+    /*
     points = playRound(playerChoice, points);
     humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
     if (points[0] >= 5 || points[1] >= 5) endGame(points); 
+    */
   });
   
   scissors.addEventListener('click', chooseScissors = () => {
     playerChoice =  'scissors';
+    points=updateScore(playerChoice, points, humanScore, computerScore);
+    /*
     points = playRound(playerChoice, points);
     humanScore.textContent =  points[0];
     computerScore.textContent = points[1];
    console.log(points);
    if (points[0] >= 5  || points[1] >= 5) endGame(points);
+   */
   });
 }
 
@@ -63,32 +72,47 @@ function getRandomInteger(min,max) {
 }
 
 function compare(playerChoice, computerChoice) {
-
+  
+  const background = document.querySelector('#game-wrapper');
+  let lastBackground = background.getAttribute('class');
+   
   if (playerChoice === computerChoice) {
     return "It's a tie! ";
   }
 
   if (playerChoice === 'rock' && computerChoice === 'scissors') {
+    background.classList.remove(lastBackground);
+    background.classList.add(playerChoice);
     return "You win this round. ";
   }
 
   if (playerChoice === 'rock' && computerChoice === 'paper') {
+    background.classList.remove(lastBackground);
+    background.classList.add(computerChoice);
     return  "Computer wins this round. ";
   }
 
   if (playerChoice === 'paper' && computerChoice === 'scissors') {
+    background.classList.remove(lastBackground);
+    background.classList.add(computerChoice);
     return "Computer wins this round. ";
   }
 
   if (playerChoice === 'paper' && computerChoice === 'rock') {
+    background.classList.remove(lastBackground);
+    background.classList.add(playerChoice);
     return 'You win this round. ';
   }
 
   if (playerChoice === 'scissors' && computerChoice === 'rock') {
+    background.classList.remove(lastBackground);
+    background.classList.add(computerChoice);
     return "Computer wins this round. ";
   }
 
   if (playerChoice === 'scissors' &&  computerChoice === 'paper') {
+    background.classList.remove(lastBackground);
+    background.classList.add(playerChoice);
     return "You win this round. ";
   }
 
@@ -118,12 +142,13 @@ function playRound(playerChoice, points) {
     return points;
 }
 
-function updateScore(playerChoice, points) {
+function updateScore(playerChoice, points, humanScore, computerScore) {
   points=playRound(playerChoice, points);
   humanScore.textContent =  points[0];
   computerScore.textContent = points[1];
   console.log(points);
-  if (points[0] === 5 || points[1] === 5) endGame(points); //same result as>5, goes up to 6pts
+  if (points[0] === 5 || points[1] === 5) endGame(points);
+  return points;
 }
 
 function endGame(points) {
