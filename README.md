@@ -12,3 +12,4 @@ Photo credits
 - rock from https://www.pexels.com/photo/macro-photo-of-a-rock-1093207/ by Pille Kirsi
 - paper from https://www.pexels.com/photo/low-angle-view-of-spiral-staircase-315791/
 - scissors from https://pixabay.com/photos/scissors-buy-scissors-buy-3765408/
+- scissors (320px-Skalm_2.JPG) from https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Skalm_2.JPG/320px-Skalm_2.JPG
