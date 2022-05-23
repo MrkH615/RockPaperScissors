@@ -74,9 +74,12 @@ function getRandomInteger(min,max) {
 function compare(playerChoice, computerChoice) {
   
   const background = document.querySelector('#game-wrapper');
+  const grayBackground = 'gray-background';
   let lastBackground = background.getAttribute('class');
    
   if (playerChoice === computerChoice) {
+    background.classList.remove(lastBackground);
+    background.classList.add(grayBackground);
     return "It's a tie! ";
   }
 
@@ -158,6 +161,14 @@ function endGame(points) {
   rock.removeEventListener('click', chooseRock);
   paper.removeEventListener('click', choosePaper);
   scissors.removeEventListener('click', chooseScissors);
+}
+
+function updateBackground(choice) {
+  const background = document.querySelector('#game-wrapper');
+  const grayBackground = background.querySelector('.gray-background');
+  let lastBackground = background.getAttribute('class');
+  background.classList.remove(lastBackground);
+  background.classList.add(choice);
 }
 
 playGame();

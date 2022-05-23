@@ -56,6 +56,10 @@ button {
     justify-content: center;
 }
 
+.gray-background {
+    background: gray;
+}
+
 .rock {
     font-family: 'Varela Round', sans-serif;
     background-image: url('images/pexels-pille-kirsi-1093207-cropped.jpeg');
