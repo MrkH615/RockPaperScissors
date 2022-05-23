@@ -72,50 +72,74 @@ function getRandomInteger(min,max) {
 }
 
 function compare(playerChoice, computerChoice) {
-  
+ 
+  /*
   const background = document.querySelector('#game-wrapper');
   const grayBackground = 'gray-background';
   let lastBackground = background.getAttribute('class');
-   
+  */
+  const tie = 'gray-background';
+
   if (playerChoice === computerChoice) {
+    /*
     background.classList.remove(lastBackground);
     background.classList.add(grayBackground);
+    */
+    updateBackground(tie);
     return "It's a tie! ";
   }
 
   if (playerChoice === 'rock' && computerChoice === 'scissors') {
+    /*
     background.classList.remove(lastBackground);
     background.classList.add(playerChoice);
+    */
+    updateBackground(playerChoice);
     return "You win this round. ";
   }
 
   if (playerChoice === 'rock' && computerChoice === 'paper') {
+    /*
     background.classList.remove(lastBackground);
     background.classList.add(computerChoice);
+    */
+    updateBackground(computerChoice);
     return  "Computer wins this round. ";
   }
 
   if (playerChoice === 'paper' && computerChoice === 'scissors') {
+    /*
     background.classList.remove(lastBackground);
     background.classList.add(computerChoice);
+    */
+    updateBackground(computerChoice);
     return "Computer wins this round. ";
   }
 
   if (playerChoice === 'paper' && computerChoice === 'rock') {
+    /*
     background.classList.remove(lastBackground);
     background.classList.add(playerChoice);
+    */
+    updateBackground(playerChoice);
     return 'You win this round. ';
   }
 
   if (playerChoice === 'scissors' && computerChoice === 'rock') {
+    /*
     background.classList.remove(lastBackground);
     background.classList.add(computerChoice);
+    */
+    updateBackground(computerChoice);
     return "Computer wins this round. ";
   }
 
   if (playerChoice === 'scissors' &&  computerChoice === 'paper') {
+    /*
     background.classList.remove(lastBackground);
     background.classList.add(playerChoice);
+    */
+    updateBackground(playerChoice);
     return "You win this round. ";
   }
 
@@ -165,7 +189,7 @@ function endGame(points) {
 
 function updateBackground(choice) {
   const background = document.querySelector('#game-wrapper');
-  const grayBackground = background.querySelector('.gray-background');
+  // const grayBackground = 'gray-background';
   let lastBackground = background.getAttribute('class');
   background.classList.remove(lastBackground);
   background.classList.add(choice);
