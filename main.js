@@ -179,12 +179,14 @@ function updateScore(playerChoice, points, humanScore, computerScore) {
 }
 
 function endGame(points) {
+  setTimeout(()=>{
   message.textContent='Game over! ';
   points[0] > points [1] ? 
     message.textContent += 'You win! ' : message.textContent += 'Computer wins! ';
   rock.removeEventListener('click', chooseRock);
   paper.removeEventListener('click', choosePaper);
   scissors.removeEventListener('click', chooseScissors);
+  }, 3000);
 }
 
 function updateBackground(choice) {
