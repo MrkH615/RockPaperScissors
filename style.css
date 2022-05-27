@@ -60,6 +60,10 @@ button {
     background: gray;
 }
 
+.gray-scale {
+    filter: grayscale(100%);
+}
+
 .rock {
     font-family: 'Varela Round', sans-serif;
     background-image: url('images/pexels-pille-kirsi-1093207-cropped.jpeg');
@@ -162,5 +166,11 @@ span.scissors {
     justify-content: space-around;
     width: 19rem;
     margin: 1rem 0;
+}
+
+.game-over {
+    color: green;
+    font-size: 3rem;
+    z-index: 10;
 }
 

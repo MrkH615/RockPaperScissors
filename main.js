@@ -180,13 +180,15 @@ function updateScore(playerChoice, points, humanScore, computerScore) {
 
 function endGame(points) {
   setTimeout(()=>{
-  message.textContent='Game over! ';
-  points[0] > points [1] ? 
-    message.textContent += 'You win! ' : message.textContent += 'Computer wins! ';
-  rock.removeEventListener('click', chooseRock);
-  paper.removeEventListener('click', choosePaper);
-  scissors.removeEventListener('click', chooseScissors);
-  }, 3000);
+    message.textContent='Game over! ';
+    points[0] > points [1] ? 
+      message.textContent += 'You win! ' : message.textContent += 'Computer wins! ';
+    rock.removeEventListener('click', chooseRock);
+    paper.removeEventListener('click', choosePaper);
+    scissors.removeEventListener('click', chooseScissors);
+  }, 2000);
+
+  playAgain();
 }
 
 function updateBackground(choice) {
@@ -195,6 +197,20 @@ function updateBackground(choice) {
   let lastBackground = background.getAttribute('class');
   background.classList.remove(lastBackground);
   background.classList.add(choice);
+}
+
+function playAgain() {
+  setTimeout(()=> {
+    const body = document.querySelector('body');
+    const game = document.querySelector('#center-wrapper');
+    body.classList.add('gray-scale');
+    const gameOverDiv = document.createElement('div');
+    gameOverDiv.classList.add('game-over');
+    gameOverDiv.textContent = 'Click anywhere to play again. ';
+    game.appendChild(gameOverDiv);
+    document.addEventListener('click', (event) => window.location.reload());
+  }, 3000);
+
 }
 
 playGame();
