@@ -188,7 +188,6 @@ function endGame(points) {
       message.textContent += 'It\'s a tie!' : 
       points[0] > points [1] ? 
       message.textContent += 'You win! ' : message.textContent += 'Computer wins! ';
-    
   }, 2000);
 
   playAgain();
@@ -204,13 +203,22 @@ function updateBackground(choice) {
 
 function playAgain() {
   setTimeout(()=> {
-    const body = document.querySelector('body');
-    const game = document.querySelector('#center-wrapper');
-    body.classList.add('gray-scale');
-    const gameOverDiv = document.createElement('div');
-    gameOverDiv.classList.add('game-over');
-    gameOverDiv.textContent = 'Click anywhere to play again. ';
-    game.appendChild(gameOverDiv);
+    //const body = document.querySelector('body');
+    //const game = document.querySelector('#center-wrapper');
+    const gameWrapper = document.querySelector('#game-wrapper');
+    const gameOver = document.querySelector('#game-over');
+    //const notGameOver = document.querySelectorAll('div:not(.game-over)');
+    //body.classList.add('gray-scale');
+    //game.classList.add('gray-scale');
+    gameWrapper.classList.add('gray-scale');
+    //notGameOver.forEach((notGmOvr)=>notGmOvr.classList.add('gray-scale'));
+    //const gameOverDiv = document.createElement('div');
+    //gameOverDiv.classList.add('game-over');
+    gameOver.classList.remove('hidden');
+    //gameOverDiv.id = 'game-over';
+   // gameOverDiv.textContent = 'Click anywhere to play again. ';
+    
+    
     document.addEventListener('click', (event) => window.location.reload());
   }, 3000);
 
