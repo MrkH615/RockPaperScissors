@@ -19,36 +19,16 @@ function playGame() {
   rock.addEventListener('click', chooseRock = () => {
     playerChoice = 'rock';
     points=updateScore(playerChoice, points, humanScore, computerScore);
-/*
-    points=playRound(playerChoice, points);
-    humanScore.textContent =  points[0];
-    computerScore.textContent = points[1];
-    console.log(points);
-    if (points[0] >= 5 || points[1] >= 5) endGame(points);
-*/
   });
   
   paper.addEventListener('click', choosePaper = () => {
     playerChoice = 'paper';
     points=updateScore(playerChoice, points, humanScore, computerScore);
-    /*
-    points = playRound(playerChoice, points);
-    humanScore.textContent =  points[0];
-    computerScore.textContent = points[1];
-    if (points[0] >= 5 || points[1] >= 5) endGame(points); 
-    */
   });
   
   scissors.addEventListener('click', chooseScissors = () => {
     playerChoice =  'scissors';
     points=updateScore(playerChoice, points, humanScore, computerScore);
-    /*
-    points = playRound(playerChoice, points);
-    humanScore.textContent =  points[0];
-    computerScore.textContent = points[1];
-   console.log(points);
-   if (points[0] >= 5  || points[1] >= 5) endGame(points);
-   */
   });
 }
 
@@ -73,72 +53,39 @@ function getRandomInteger(min,max) {
 
 function compare(playerChoice, computerChoice) {
  
-  /*
-  const background = document.querySelector('#game-wrapper');
-  const grayBackground = 'gray-background';
-  let lastBackground = background.getAttribute('class');
-  */
   const tie = 'gray-background';
 
   if (playerChoice === computerChoice) {
-    /*
-    background.classList.remove(lastBackground);
-    background.classList.add(grayBackground);
-    */
     updateBackground(tie);
     return "It's a tie! ";
   }
 
   if (playerChoice === 'rock' && computerChoice === 'scissors') {
-    /*
-    background.classList.remove(lastBackground);
-    background.classList.add(playerChoice);
-    */
     updateBackground(playerChoice);
     return "You win this round. ";
   }
 
   if (playerChoice === 'rock' && computerChoice === 'paper') {
-    /*
-    background.classList.remove(lastBackground);
-    background.classList.add(computerChoice);
-    */
     updateBackground(computerChoice);
     return  "Computer wins this round. ";
   }
 
   if (playerChoice === 'paper' && computerChoice === 'scissors') {
-    /*
-    background.classList.remove(lastBackground);
-    background.classList.add(computerChoice);
-    */
     updateBackground(computerChoice);
     return "Computer wins this round. ";
   }
 
   if (playerChoice === 'paper' && computerChoice === 'rock') {
-    /*
-    background.classList.remove(lastBackground);
-    background.classList.add(playerChoice);
-    */
     updateBackground(playerChoice);
     return 'You win this round. ';
   }
 
   if (playerChoice === 'scissors' && computerChoice === 'rock') {
-    /*
-    background.classList.remove(lastBackground);
-    background.classList.add(computerChoice);
-    */
     updateBackground(computerChoice);
     return "Computer wins this round. ";
   }
 
   if (playerChoice === 'scissors' &&  computerChoice === 'paper') {
-    /*
-    background.classList.remove(lastBackground);
-    background.classList.add(playerChoice);
-    */
     updateBackground(playerChoice);
     return "You win this round. ";
   }
@@ -195,7 +142,6 @@ function endGame(points) {
 
 function updateBackground(choice) {
   const background = document.querySelector('#game-wrapper');
-  // const grayBackground = 'gray-background';
   let lastBackground = background.getAttribute('class');
   background.classList.remove(lastBackground);
   background.classList.add(choice);
@@ -203,22 +149,10 @@ function updateBackground(choice) {
 
 function playAgain() {
   setTimeout(()=> {
-    //const body = document.querySelector('body');
-    //const game = document.querySelector('#center-wrapper');
     const gameWrapper = document.querySelector('#game-wrapper');
     const gameOver = document.querySelector('#game-over');
-    //const notGameOver = document.querySelectorAll('div:not(.game-over)');
-    //body.classList.add('gray-scale');
-    //game.classList.add('gray-scale');
     gameWrapper.classList.add('gray-scale');
-    //notGameOver.forEach((notGmOvr)=>notGmOvr.classList.add('gray-scale'));
-    //const gameOverDiv = document.createElement('div');
-    //gameOverDiv.classList.add('game-over');
     gameOver.classList.remove('hidden');
-    //gameOverDiv.id = 'game-over';
-   // gameOverDiv.textContent = 'Click anywhere to play again. ';
-    
-    
     document.addEventListener('click', (event) => window.location.reload());
   }, 3000);
 
