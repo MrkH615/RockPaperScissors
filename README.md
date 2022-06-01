@@ -2,6 +2,10 @@
 This was my first project with Java Script, completed as part of The Odin Project.
 (https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors)
 
+TODO: 
+1. Merge rps-ui into main
+2. Revise README.md
+
 ** What I learned:  **
 - Try out short snippets of code before incorporating them into a project.
 - The cause of and solution to a problem aren't always what I think they are at first.
