@@ -1,9 +1,6 @@
 # RockPaperScissors
 Revised version of Rock Paper Scissors using DOM manipulation, completed as part of the The Odin Project ( https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors) Foundations Course (https://www.theodinproject.com/paths/foundations/courses/foundations)
 
-
-TODO: 
-
 ** What I learned:  **
 
 - Try out short snippets of code before incorporating them into a project.
